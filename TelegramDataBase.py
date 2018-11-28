@@ -7,12 +7,13 @@ class TelegramDataBase:
         self.dbname = "d7to7lm591k63g"
         self.dbuser = "jxkqaclpjpmzez"
         self.dbpass = "8dbde4ebb9ce7e6720455d0ad19fb6c949d5ba8c2de36b44b50558c834301085"
+        self.port = 5432
         self.connect()
 
     def connect(self):
         print( "Подключаюсь к БД" )
         try:
-            self.connection = psycopg2.connect( host = self.host,  dbname=self.dbname, user=self.dbuser, password=self.dbpass)
+            self.connection = psycopg2.connect( host = self.host,  dbname=self.dbname, user=self.dbuser, password=self.dbpass, port = self.port )
             self.cursor = self.connection.cursor()
             print("Подключение к БД установлено")
         except:
