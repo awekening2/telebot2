@@ -23,7 +23,7 @@ class TelegramView:
         try:
             MessageLoop(self.bot, { 'chat': self.listner, 'callback_query': self.on_callback_query }).run_as_thread()
             while 1:
-                time.sleep(60)
+                time.sleep(10)
         except:
             print( "Прервано" )
 
