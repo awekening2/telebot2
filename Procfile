@@ -1,1 +1,1 @@
-web: python Main.py
+web: python Main.py $5000
