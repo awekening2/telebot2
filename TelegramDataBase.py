@@ -3,15 +3,16 @@ import psycopg2
 class TelegramDataBase:
 
     def __init__(self):
-        self.dbname = "telegrambot"
-        self.dbuser = "awekening2"
-        self.dbpass = "o0l8h8ya"
+        self.host = "ec2-54-247-119-167.eu-west-1.compute.amazonaws.com"
+        self.dbname = "d7to7lm591k63g"
+        self.dbuser = "jxkqaclpjpmzez"
+        self.dbpass = "8dbde4ebb9ce7e6720455d0ad19fb6c949d5ba8c2de36b44b50558c834301085"
         self.connect()
 
     def connect(self):
         print( "Подключаюсь к БД" )
         try:
-            self.connection = psycopg2.connect(dbname=self.dbname, user=self.dbuser, password=self.dbpass)
+            self.connection = psycopg2.connect( host = self.host,  dbname=self.dbname, user=self.dbuser, password=self.dbpass)
             self.cursor = self.connection.cursor()
             print("Подключение к БД установлено")
         except:
